@@ -1,0 +1,59 @@
+/*  #F1F3E0
+    #D2DCB6
+    #A1BC98
+    #778873
+*/
+
+h1 {
+    font-size: 4rem;
+    margin: 0px;
+}
+
+h2{
+    font-family: 'Brittany Signature', cursive, sans-serif;
+    font-weight: 400;  
+    text-align: center;  
+    margin: 0px;
+}
+
+h3{
+    margin: 0px;
+    font-family: cursive, sans-serif;
+    font-weight: 100;
+}
+
+p{
+    margin: 0px;
+}
+
+#First
+{
+    font-family: 'Brittany Signature', cursive, sans-serif;
+    border: solid;
+    border-width: 5px 10px 2px;
+    font-weight: 400;
+    color: #687c64;
+    background-color: #D2DCB6;
+    text-align: center;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#Second 
+{
+    font-family: cursive, sans-serif;
+    font-weight: 400;
+    border: solid;
+    border-width: 1px 10px 2px;
+    color: #687c64;
+    background-color: #D2DCB6;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+body {
+    background-color: #F1F3E0;
+
+}

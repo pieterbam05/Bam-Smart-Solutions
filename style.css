@@ -1,15 +1,19 @@
-/* Color Palette Constants */
+/* ========================================================
+   BAM! SMART SOLUTIONS — STYLESHEET
+   ======================================================== */
+
+/* --- Color Palette & Variables --- */
 :root {
-    --color-bg-light: #EBEBEB;      
-    --color-primary: #1F183A;       
-    --color-secondary: #3B4E6D;     
-    --color-accent: #70C095;        
-    --color-accent-hover: #63A29A;  
+    --color-bg-light: #EBEBEB;
+    --color-primary: #1F183A;
+    --color-secondary: #3B4E6D;
+    --color-accent: #70C095;
+    --color-accent-hover: #63A29A;
     --color-white: #FFFFFF;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Global Reset & Base Styles */
+/* --- Global Reset & Base --- */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +34,10 @@ body {
     padding: 0 20px;
 }
 
-/* Header & Navigation */
+/* ========================================================
+   HEADER & NAVIGATION
+   ======================================================== */
+
 header {
     background-color: var(--color-white);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -59,9 +66,11 @@ nav {
     color: var(--color-accent);
 }
 
+/* Desktop nav links */
 .nav-links {
     display: flex;
     list-style: none;
+    gap: 0;
 }
 
 .nav-links li {
@@ -79,7 +88,43 @@ nav {
     color: var(--color-accent);
 }
 
-/* Hero Section */
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate hamburger to X when open */
+.nav-toggle--open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle--open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle--open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================================================
+   HERO SECTION
+   ======================================================== */
+
 .hero {
     padding: 160px 0 100px 0;
     background: linear-gradient(135deg, var(--color-white) 0%, #F5F7FA 100%);
@@ -101,6 +146,10 @@ nav {
     margin: 0 auto 35px auto;
 }
 
+/* ========================================================
+   BUTTONS
+   ======================================================== */
+
 .btn {
     display: inline-block;
     background-color: var(--color-accent);
@@ -116,7 +165,10 @@ nav {
     background-color: var(--color-accent-hover);
 }
 
-/* Services Section */
+/* ========================================================
+   SERVICES / 4 PILLARS SECTION
+   ======================================================== */
+
 .services {
     padding: 100px 0;
 }
@@ -124,7 +176,7 @@ nav {
 .section-title {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: var(--color-primary);
     position: relative;
 }
@@ -138,9 +190,15 @@ nav {
     margin: 10px auto 0 auto;
 }
 
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-secondary);
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -168,7 +226,10 @@ nav {
     font-size: 0.95rem;
 }
 
-/* Value Proposition / Focus Section */
+/* ========================================================
+   APPROACH / ABOUT SECTION
+   ======================================================== */
+
 .about-focus {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -190,7 +251,10 @@ nav {
     opacity: 0.9;
 }
 
-/* Contact Section */
+/* ========================================================
+   CONTACT SECTION
+   ======================================================== */
+
 .contact {
     padding: 100px 0;
     text-align: center;
@@ -217,7 +281,58 @@ nav {
     font-style: italic;
 }
 
-/* Footer */
+/* ========================================================
+   PRE-FOOTER CTA
+   ======================================================== */
+
+.prefooter-cta {
+    background-color: var(--color-bg-light);
+    border-top: 1px solid rgba(31, 24, 58, 0.08);
+    padding: 40px 0;
+}
+
+.prefooter-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.prefooter-inner p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.prefooter-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prefooter-logo-bam {
+    display: block;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.prefooter-logo-sub {
+    display: block;
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+
 footer {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -225,11 +340,259 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Responsive Design */
+.footer-socials a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-accent);
+}
+
+/* ========================================================
+   RESPONSIVE — MOBILE
+   ======================================================== */
+
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.1rem; }
-    .nav-links { display: none; } 
-    .services-grid { grid-template-columns: 1fr; }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Show hamburger, hide desktop nav by default */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 30px;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Services grid — 1 column on mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Products grid — 1 column on mobile */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Pre-footer — stack vertically */
+    .prefooter-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ========================================================
+   PRODUCTS PAGE
+   ======================================================== */
+
+.products-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Section headers */
+.products-section-header {
+    margin-bottom: 30px;
+}
+
+.products-section-header--spaced {
+    margin-top: 70px;
+}
+
+.products-section-title {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.products-section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 8px 0 0 0;
+}
+
+.products-section-subtitle {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+    margin-top: 12px;
+}
+
+/* Product grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Product card */
+.product-card {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured / Core Offer card */
+.product-card--featured {
+    border-left: 4px solid var(--color-accent);
+    box-shadow: 0 6px 20px rgba(112, 192, 149, 0.15);
+}
+
+/* Tags */
+.product-tag {
+    display: inline-block;
+    background-color: rgba(31, 24, 58, 0.08);
+    color: var(--color-primary);
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-tag--core {
+    background-color: rgba(112, 192, 149, 0.2);
+    color: #2a7a52;
+}
+
+.product-title {
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+    color: var(--color-primary);
+}
+
+.product-description {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-includes {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.product-includes li {
+    font-size: 13px;
+    color: var(--color-secondary);
+    padding: 4px 0;
+    padding-left: 18px;
+    position: relative;
+}
+
+.product-includes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.product-price-period {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-secondary);
+}
+
+/* Enquire button (anchor styled as button) */
+.btn-enquire {
+    display: block;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-enquire:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-white);
+}
+
+/* Not sure box */
+.not-sure-box {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.not-sure-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--color-primary);
+}
+
+.not-sure-box p {
+    color: var(--color-secondary);
+    margin-bottom: 25px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAM! Smart Solutions | Practical Business Automation & Dashboards</title>
+    <meta name="description" content="BAM! Smart Solutions helps South African businesses replace manual admin with smart digital systems, automated pipelines, and real-time dashboards.">
+    <title>BAM! Smart Solutions | Operational Efficiency & Dashboards</title>
+    <!-- Favicon: replace /favicon.ico with your actual favicon file -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,41 +16,57 @@
         <div class="container">
             <nav>
                 <div class="logo">BAM!<span> Smart Solutions</span></div>
-                <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
+
+                <!-- Desktop nav -->
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#pillars">The 4 Pillars</a></li>
                     <li><a href="#approach">Our Approach</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Friction Audit</a></li>
+                    <li><a href="products.html">Service Packages</a></li>
                 </ul>
+
+                <!-- Hamburger button (mobile only) -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>We replace manual data entry with smart automation so you can focus on growing your business.</h1>
-            <p>BAM! Smart Solutions builds practical, automated workflows and tailored reporting dashboards that save South African business owners time and preserve operational revenue.</p>
-            <a href="#contact" class="btn">Request a Friction Audit</a>
+            <h1>Stop drowning in manual admin, disconnected spreadsheets, and missing data.</h1>
+            <p>We are a technical operational efficiency consultancy. We replace friction with smart technology, freeing you from manual data entry so you can focus on scaling your business.</p>
+            <a href="#contact" class="btn">Request a Free Friction Audit</a>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="pillars" class="services">
         <div class="container">
-            <h2 class="section-title">What We Do</h2>
+            <h2 class="section-title">The 4 Smart Pillars</h2>
+            <p class="section-subtitle">Every automated pipeline, CRM setup, and dashboard we build is engineered using our foundational architecture.</p>
             <div class="services-grid">
                 
                 <div class="service-card">
-                    <h3>CRM Automations</h3>
-                    <p>Connect your business tools to stop manual double-entry. We build background automation pipelines that securely route sales data and lead captures without human error.</p>
+                    <h3>📡 1. Sensory (Data Capture)</h3>
+                    <p>A smart system "feels" what is happening without relying on human data entry. We deploy streamlined digital pipelines and structured Google Forms to replace messy paper trails.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Financial Pulse Reports</h3>
-                    <p>Turn fragmented business spreadsheets into unified visual dashboards. Gain absolute clarity over your margins and daily operational milestones at a single glance.</p>
+                    <h3>🔗 2. Connected (Data Flow)</h3>
+                    <p>Captured data is useless in an isolated silo. We build automated bridges between your existing platforms. When a lead is captured, it instantly populates your CRM — no copy-pasting required.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Inventory Tracking Systems</h3>
-                    <p>We map out your business's clunkiest administrative bottlenecks and design lean, cost-effective technology strategies to resolve stock monitoring and logistics workflows.</p>
+                    <h3>📊 3. Analytical (Insights)</h3>
+                    <p>We translate raw data into actionable business intelligence. We build visual Power BI, React, and Looker Studio dashboards giving you a real-time "Financial Pulse" on your operations.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>⚙️ 4. Adaptive (Action)</h3>
+                    <p>The ultimate goal is independent action. We build logic-based triggers into your operations so your system automatically generates invoices, alerts the right people, and fixes bottlenecks.</p>
                 </div>
 
             </div>
@@ -55,27 +75,76 @@
 
     <section id="approach" class="about-focus">
         <div class="container">
-            <h2>Built on Practicality, Not Hype</h2>
-            <p>We focus strictly on how data flows through your business. By matching modern low-code pipeline architecture with robust analytics, we deliver highly reliable systems optimized to preserve capital and improve baseline efficiency.</p>
+            <h2>Scalable &amp; Secure Architecture</h2>
+            <p>We focus strictly on how data flows through your business. By matching modern low-code pipeline architecture with robust analytics, we deliver highly reliable, POPIA-compliant systems optimized to preserve capital and improve baseline efficiency — all without the bloat of traditional enterprise software.</p>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-box">
-                <h2 class="section-title">Optimize Your Operations</h2>
-                <p>Ready to uncover hidden bottlenecks? Reach out to schedule a free 30-minute Operational Friction Audit. We will map out a manual process for you and show you exactly how to automate it.</p>
-                <a href="mailto:pieter@bamsmartsolutions.co.za" class="btn">Email Our Team</a>
-                <p class="notice">Note: To maintain high-quality service delivery, our support and communication operate on a structured, evening/next-business-day turnaround.</p>
+                <h2 class="section-title">Let's Map Your Clunkiest Process</h2>
+                <p>Ready to uncover hidden bottlenecks? Schedule a free 30-minute Operational Friction Audit. We will map out your worst manual process and give you a free, one-page roadmap showing exactly how to automate it.</p>
+                <a href="mailto:pieter@bamsmartsolutions.co.za?subject=Free%20Friction%20Audit%20Request&body=Hi%20Pieter%2C%0A%0AI%20would%20like%20to%20book%20a%20free%2030-minute%20Operational%20Friction%20Audit.%0A%0AOrganisation%3A%20%0AContact%20Name%3A%20%0APhone%20Number%3A%20%0A%0AThank%20you." class="btn">Claim Your Friction Audit</a>
+                <p class="notice">Note: We operate on a high-efficiency asynchronous model. Routine support and communication are governed by our transparent next-business-day turnaround SLA.</p>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Pre-footer CTA -->
+    <div class="prefooter-cta">
         <div class="container">
-            <p>&copy; 2026 BAM! Smart Solutions. All rights reserved. Solutions built for local efficiency.</p>
+            <div class="prefooter-inner">
+                <div class="prefooter-logo">
+                    <svg width="40" height="40" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10 H25 Q35 10 35 20 Q35 25 28 25 Q38 25 38 35 Q38 45 25 45 H10 Z" fill="none" stroke="#1F183A" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M15 25 H45 M35 15 L45 25 L35 35" fill="none" stroke="#70C095" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <span class="prefooter-logo-bam">BAM!</span>
+                        <span class="prefooter-logo-sub">SMART SOLUTIONS</span>
+                    </div>
+                </div>
+                <p>Ready to clean up your operations?</p>
+                <a href="#contact" class="btn">Let's Talk</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 BAM! Smart Solutions. Making business fundamentally easier.</p>
+        <div class="footer-socials">
+            <a href="https://linkedin.com/company/bam-smart-solutions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <!--<a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://facebook.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i> -->
+            </a>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('nav-open');
+            toggle.classList.toggle('nav-toggle--open', isOpen);
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close nav when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-open');
+                toggle.classList.remove('nav-toggle--open');
+                toggle.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -596,3 +596,139 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ========================================================
+   NEW SECTIONS: PRICING TEASER & HOW IT WORKS
+   ======================================================== */
+
+/* --- Teaser Pricing Strip --- */
+.pricing-teaser {
+    background-color: var(--color-primary);
+    border-top: 1px solid rgba(31, 24, 58, 0.08);
+    border-bottom: 1px solid rgba(31, 24, 58, 0.08);
+    padding: 25px 0;
+}
+
+.pricing-teaser-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pricing-teaser p {
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.pricing-teaser p strong {
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-left: 5px;
+}
+
+/* Modifying button slightly for contrasting strip layout */
+.btn-secondary-style {
+    background-color: var(--color-accent);
+}
+.btn-secondary-style:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* --- How It Works Section --- */
+.how-it-works {
+    padding: 100px 0;
+    background-color: #F5F7FA; /* Light background contrast split */
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.step-card {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* Arrow indicators between step columns on desktop */
+.steps-grid .step-card:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -30px;
+    top: 35%;
+    font-size: 2rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+
+.how-it-works-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-packages-link {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 3px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.view-packages-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent-hover);
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 768px) {
+    .pricing-teaser-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .steps-grid .step-card:not(:last-child)::after {
+        content: '↓';
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -25px;
+        transform: translateX(-50%);
+    }
+}

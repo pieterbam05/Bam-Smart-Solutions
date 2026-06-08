@@ -66,6 +66,11 @@ nav {
     color: var(--color-accent);
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Inherits the deep blue color you already set for your logo class */
+}
+
 /* Desktop nav links */
 .nav-links {
     display: flex;

@@ -36,9 +36,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="work.html">Our Work</a></li>
                     <li><a href="#pillars">The 4 Pillars</a></li>
-                    <li><a href="#approach">Our Approach</a></li>
                     <li><a href="#contact">Friction Audit</a></li>
-                    <li><a href="products.html">Pricing & Packages</a></li>
+                    <li><a href="products.html">Pricing &amp; Packages</a></li>
                 </ul>
 
                 <!-- Hamburger button (mobile only) -->
@@ -162,12 +161,41 @@
         </div>
     </section>
 
-    <section class="pricing-teaser">
-    <div class="container pricing-teaser-inner">
-        <p>See real dashboards we've built <strong>View Our Work</strong></p>
-        <a href="work.html" class="btn btn-secondary-style">See Project Examples &rarr;</a>
-    </div>
-</section>
+    <!-- Social Proof / Results Strip -->
+    <section class="results-section">
+        <div class="container">
+            <h2 class="section-title">Real Problems. Real Fixes.</h2>
+            <p class="section-subtitle">Every engagement starts with a messy manual process — and ends with a system that runs itself.</p>
+
+            <div class="results-grid">
+
+                <div class="result-card">
+                    <div class="result-icon">🏘️</div>
+                    <div class="result-body">
+                        <span class="result-tag">Residential Estate</span>
+                        <h3>From paper chaos to centralised control</h3>
+                        <p>A residential estate was tracking document submissions across scattered emails and paper forms — no single source of truth, constant duplicates. We built a structured Excel dashboard with primary-key tracking that gave management a single, filterable view of all records.</p>
+                        <a href="work.html" class="result-link">See the project &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">📊</div>
+                    <div class="result-body">
+                        <span class="result-tag">Financial Dashboard</span>
+                        <h3>Director-level visibility without manual report compiling</h3>
+                        <p>Built as a live capability demonstration: scattered financial data pulled into a single interactive Power BI dashboard — giving decision-makers a real-time read on the numbers that matter, updated automatically.</p>
+                        <a href="work.html" class="result-link">See the dashboard &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; margin-top: 40px;">
+                <a href="work.html" class="btn">View All Project Examples</a>
+            </div>
+        </div>
+    </section>
 
     <section id="approach" class="about-focus">
         <div class="container">
@@ -176,12 +204,61 @@
         </div>
     </section>
 
+
+
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-box">
                 <h2 class="section-title">Let's Map Your Clunkiest Process</h2>
-                <p>Ready to uncover hidden bottlenecks? Schedule a free 30-minute Operational Friction Audit. We will map out your worst manual process and give you a free, one-page roadmap showing exactly how to automate it.</p>
-                <a href="mailto:info@bamsmartsolutions.co.za?subject=Free%20Friction%20Audit%20Request&body=Hi%20BAM!%2C%0A%0AI%20would%20like%20to%20book%20a%20free%2030-minute%20Operational%20Friction%20Audit.%0A%0AOrganisation%3A%20%0AContact%20Name%3A%20%0APhone%20Number%3A%20%0A%0AThank%20you." class="btn">Claim Your Friction Audit</a>
+                <p>Ready to uncover hidden bottlenecks? Book a free 30-minute Operational Friction Audit — we'll map your worst manual process and hand you a one-page roadmap showing exactly how to fix it.</p>
+
+                <form class="contact-form" action="https://formspree.io/f/xnjkqjjp" method="POST">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-org">Organisation <span class="required">*</span></label>
+                            <input type="text" id="contact-org" name="organisation" placeholder="Acme Property Group" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="contact-email" name="email" placeholder="jane@company.co.za" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="071 000 0000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-process">What's your clunkiest manual process? <span class="required">*</span></label>
+                        <textarea id="contact-process" name="message" rows="4" placeholder="e.g. We track resident document submissions via WhatsApp and a shared spreadsheet that nobody keeps updated..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-package">Are you interested in a specific service?</label>
+                        <select id="contact-package" name="service_interest">
+                            <option value="">— Not sure yet —</option>
+                            <option value="Digital Forms Starter">Digital Forms Starter (from R 4,900)</option>
+                            <option value="Structured Data Management">Structured Data Management (from R 8,500)</option>
+                            <option value="Management Dashboard System">Management Dashboard System (from R 13,500)</option>
+                            <option value="Website Package">Website Package</option>
+                            <option value="Monthly Retainer">Monthly Retainer / Ongoing Support</option>
+                            <option value="Not sure">Not sure — need advice</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn contact-submit">Claim Your Free Friction Audit</button>
+
+                    <p class="form-note">We typically respond within one business day. No spam, no obligation.</p>
+
+                </form>
             </div>
         </div>
     </section>
@@ -239,6 +316,23 @@
                 toggle.classList.remove('nav-toggle--open');
                 toggle.setAttribute('aria-expanded', false);
             });
+        });
+
+        // Pre-fill service dropdown if arriving from a package card
+        document.addEventListener('DOMContentLoaded', () => {
+            const stored = sessionStorage.getItem('bam_service_interest');
+            if (stored) {
+                const select = document.getElementById('contact-package');
+                if (select) {
+                    for (let opt of select.options) {
+                        if (opt.value === stored) {
+                            opt.selected = true;
+                            break;
+                        }
+                    }
+                }
+                sessionStorage.removeItem('bam_service_interest');
+            }
         });
     </script>
 

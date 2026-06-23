@@ -212,7 +212,10 @@
                 <h2 class="section-title">Let's Map Your Clunkiest Process</h2>
                 <p>Ready to uncover hidden bottlenecks? Book a free 30-minute Operational Friction Audit — we'll map your worst manual process and hand you a one-page roadmap showing exactly how to fix it.</p>
 
-                <form class="contact-form" action="https://formspree.io/f/xnjkqjjp" method="POST">
+                <form class="contact-form" id="contact-form">
+
+                    <!-- Honeypot spam protection — hidden from real users -->
+                    <input type="text" name="_honeypot" id="_honeypot" style="display:none;" tabindex="-1" autocomplete="off">
 
                     <div class="form-row">
                         <div class="form-group">
@@ -300,6 +303,7 @@
     </footer>
 
     <script>
+        // --- Nav toggle ---
         const toggle = document.getElementById('nav-toggle');
         const navLinks = document.getElementById('nav-links');
 
@@ -309,7 +313,6 @@
             toggle.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close nav when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('nav-open');
@@ -318,7 +321,7 @@
             });
         });
 
-        // Pre-fill service dropdown if arriving from a package card
+        // --- Pre-fill service dropdown if arriving from a package card ---
         document.addEventListener('DOMContentLoaded', () => {
             const stored = sessionStorage.getItem('bam_service_interest');
             if (stored) {
@@ -334,6 +337,78 @@
                 sessionStorage.removeItem('bam_service_interest');
             }
         });
+
+        // --- Contact form: Make webhook submission ---
+        const MAKE_WEBHOOK = 'https://hook.eu1.make.com/va4nsbnqb69l86n38fisbehme19ioo41';
+        const form = document.getElementById('contact-form');
+        const submitBtn = form.querySelector('.contact-submit');
+
+        const formLoadTime = Date.now();
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Honeypot check — if filled, silently reject
+            if (document.getElementById('_honeypot').value !== '') {
+                showMessage('success'); // Show success to fool the bot
+                return;
+            }
+
+            // Timing check — real users take more than 3 seconds
+            if (Date.now() - formLoadTime < 3000) {
+                showMessage('success'); // Silently reject
+                return;
+            }
+
+            // Collect form data
+            const payload = {
+                name: document.getElementById('contact-name').value.trim(),
+                organisation: document.getElementById('contact-org').value.trim(),
+                email: document.getElementById('contact-email').value.trim(),
+                phone: document.getElementById('contact-phone').value.trim(),
+                message: document.getElementById('contact-process').value.trim(),
+                service_interest: document.getElementById('contact-package').value,
+                submitted_at: new Date().toISOString()
+            };
+
+            // Disable button while submitting
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                await fetch(MAKE_WEBHOOK, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                showMessage('success');
+                form.reset();
+            } catch (err) {
+                showMessage('error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Claim Your Free Friction Audit';
+            }
+        });
+
+        function showMessage(type) {
+            // Remove any existing message
+            const existing = document.getElementById('form-feedback');
+            if (existing) existing.remove();
+
+            const msg = document.createElement('p');
+            msg.id = 'form-feedback';
+
+            if (type === 'success') {
+                msg.textContent = "Thanks! We'll be in touch within one business day.";
+                msg.style.cssText = 'color: #2a7a52; font-weight: 600; margin-top: 16px; text-align: center;';
+            } else {
+                msg.textContent = 'Something went wrong. Please email us directly at pieter@bamsmartsolutions.co.za.';
+                msg.style.cssText = 'color: #c0392b; font-weight: 600; margin-top: 16px; text-align: center;';
+            }
+
+            form.appendChild(msg);
+        }
     </script>
 
 </body>
